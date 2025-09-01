@@ -1,40 +1,69 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# Flashcard Generator
 
-## Getting Started
+An interactive flashcard app built with Next.js and React. Hover over cards to reveal answers with a smooth 3D flip animation. The project demonstrates modern React component design, CSS module styling, and clean state/prop management for an engaging user experience. Easily extendable for learning, revision, or portfolio demos.
 
-First, run the development server:
+## Features
+- Interactive flashcards with hover flip animation
+- Centered question and answer content for clear readability
+- Smooth transitions and back-flip delay
+- Easily add, edit, or remove flashcards in `data/flashcards.js`
+- Responsive and visually appealing card layout
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Folder Structure
+```
+flashcard-app/
+├── pages/
+│   └── index.js           # Main page
+├── components/
+│   ├── Flashcard.js       # Single flashcard component
+│   └── FlashcardList.js   # Displays all flashcards
+├── data/
+│   └── flashcards.js      # Array of question-answer objects
+├── styles/
+│   └── Flashcard.module.css  # Card flip and layout styles
+├── package.json
+└── README.md
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Getting Started
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd flashcard-app
+   ```
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+3. **Run the development server**
+   ```bash
+   npm run dev
+   ```
+   Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## How to Add Flashcards
+Edit `data/flashcards.js`:
+```js
+export const flashcards = [
+  { id: 1, question: "What is React?", answer: "A JavaScript library for building UIs" },
+  { id: 2, question: "What is JSX?", answer: "A syntax extension for JavaScript that looks like HTML" },
+  // Add more flashcards here
+];
+```
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## Tech Stack
+- **Next.js 15** – React framework for server-side rendering and routing
+- **React** – Component-based UI
+- **CSS Modules** – Scoped styling for each component
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+## Customizing Styles
+- Modify `styles/Flashcard.module.css` for card size, colors, and flip animation
+- Adjust `.card`, `.front`, `.back`, and `.inner` classes for different effects
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Future Enhancements
+- Add dark/light mode toggle
+- Add category filters or search for flashcards
+- Save user progress using localStorage
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+## License
+This project is open-source and available under the MIT License.
