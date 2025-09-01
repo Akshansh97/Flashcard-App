@@ -23,7 +23,6 @@
 
 .card:not(:hover) .inner {
   transition-delay: 0.3s;
-  /* wait 0.5s before flipping back */
 }
 
 .front,
