@@ -8,7 +8,7 @@ export default function Flashcard({ question, answer }) {
           <h3>{question}</h3>
         </div>
         <div className={styles.back}>
-          <p>{answer}</p>
+          <h5>{answer}</h5>
         </div>
       </div>
     </div>

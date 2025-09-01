@@ -1,4 +1,3 @@
-
 .card {
   width: 400px;
   height: 150px;
@@ -8,7 +7,7 @@
 }
 
 .inner {
-    color: rgb(139, 85, 19);
+  color: rgb(48, 124, 73);
   position: relative;
   width: 100%;
   height: 100%;
@@ -23,10 +22,12 @@
 }
 
 .card:not(:hover) .inner {
-  transition-delay: 0.2s; /* wait 0.5s before flipping back */
+  transition-delay: 0.3s;
+  /* wait 0.5s before flipping back */
 }
 
-.front, .back {
+.front,
+.back {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -38,9 +39,15 @@
   align-items: center;
   text-align: center;
   background-color: #fff;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 1);
 }
 
 .back {
+  background-color: #FDEBD0;
+  color: rgb(48, 124, 73);
   transform: rotateY(180deg);
+  border: 1px solid #ddd;
+  border-radius: 100px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 1);
+  font-size: large;
 }
