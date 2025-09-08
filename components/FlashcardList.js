@@ -1,24 +1,32 @@
-import { useState } from "react";
 import Flashcard from "./Flashcard";
 
 export default function FlashcardList({ cards }) {
-  const [flippedCardId, setFlippedCardId] = useState(null);
-
-  const handleFlip = (id) => {
-    // If clicking the same card, unflip it; otherwise flip new card
-    setFlippedCardId(flippedCardId === id ? null : id);
+  const handleHover = () => {
+    const audioEl = document.getElementById("flip-audio");
+    if (audioEl) {
+      audioEl.currentTime = 0; // rewind to start
+      audioEl
+        .play()
+        .catch((err) => console.warn("Sound play prevented by browser:", err));
+    }
   };
 
   return (
     <div className="flashcard-list">
-      {cards.map((card) => (
+      {/* preload audio into DOM */}
+      <audio
+        id="flip-audio"
+        src="/sound/flip.mp3"
+        preload="auto"
+      ></audio>
+
+      {cards.map((card) => ( // add key prop here
         <Flashcard
           key={card.id}
           id={card.id}
           question={card.question}
           answer={card.answer}
-          flipped={flippedCardId === card.id}
-          onFlip={handleFlip}
+          onHover={handleHover} // pass hover handler as prop
         />
       ))}
     </div>
