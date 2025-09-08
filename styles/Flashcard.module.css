@@ -1,10 +1,11 @@
 .card {
   width: 400px;
-  height: 150px;
+  height: 180px;
   perspective: 1000px;
   margin: 10px;
   cursor: pointer;
 }
+
 
 .inner {
   color: rgb(48, 124, 73);
@@ -22,7 +23,7 @@
 }
 
 .card:not(:hover) .inner {
-  transition-delay: 0.4s;
+  transition-delay: 0.3s;
 }
 
 .front,
@@ -42,7 +43,7 @@
 }
 
 .back {
-  background-color: #FDEBD0;
+  background-color: #ffffff;
   color: rgb(48, 124, 73);
   transform: rotateY(180deg);
   border: 1px solid #ddd;
