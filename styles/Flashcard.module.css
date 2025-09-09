@@ -1,53 +1,62 @@
+/* ---------- Container for each card ---------- */
 .card {
   width: 400px;
   height: 180px;
-  perspective: 1000px;
+  perspective: 1000px; /* Enables 3D effect, allowing inner element to rotate in 3D */
   margin: 10px;
-  cursor: pointer;
+  cursor: pointer; /* Changes cursor to indicate interactivity */
 }
 
-
+/* ---------- Inner wrapper that actually flips ---------- */
 .inner {
-  color: rgb(48, 124, 73);
   position: relative;
   width: 100%;
   height: 100%;
-  transition: transform 0.6s;
-  transform-style: preserve-3d;
-  transition-delay: 0s;
+  transform-style: preserve-3d; /* Keeps child elements in 3D space */
+  transition: transform 0.6s; /* Smooth flip animation */
+  color: rgb(48, 124, 73); /* Default text color */
 }
 
+/* ---------- Flip the card on hover ---------- */
 .card:hover .inner {
-  transform: rotateY(180deg);
-  transition-delay: 0s;
+  transform: rotateY(180deg); /* Rotates the inner element 180 degrees */
+  transition-delay: 0s;       /* Immediate flip on hover */
 }
 
+/* ---------- Delay return animation slightly for smooth effect ---------- */
 .card:not(:hover) .inner {
-  transition-delay: 0.3s;
+  transition-delay: 0.3s; /* Small delay before returning to front */
 }
 
+/* ---------- Front and back faces ---------- */
 .front,
 .back {
   position: absolute;
   width: 100%;
   height: 100%;
-  backface-visibility: hidden;
+  backface-visibility: hidden; /* Hides the back side when not visible */
   border: 1px solid #ddd;
-  border-radius: 100px;
+  border-radius: 100px; /* Rounded edges for a modern look */
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: center; /* Centers content horizontally */
+  align-items: center;     /* Centers content vertically */
   text-align: center;
-  background-color: #fff;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 1); /* Creates depth with shadow */
+  background-color: var(--card-bg, #fff); /* Supports theme variable for light/dark mode */
+  color: var(--card-text, rgb(48, 124, 73)); /* Supports theme variable */
+  padding: 10px;
 }
 
+/* ---------- Back face rotated ---------- */
 .back {
-  background-color: #ffffff;
-  color: rgb(48, 124, 73);
-  transform: rotateY(180deg);
-  border: 1px solid #ddd;
-  border-radius: 100px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 1);
-  font-size: large;
+  transform: rotateY(180deg); /* Rotates back face so it's hidden initially */
+  font-size: large;           /* Slightly larger text for readability */
+}
+
+/* ---------- Optional: Responsive adjustments ---------- */
+@media (max-width: 500px) {
+  .card {
+    width: 90%;   /* Makes cards almost full-width on small screens */
+    height: 150px; /* Slightly shorter height for mobile */
+  }
 }
