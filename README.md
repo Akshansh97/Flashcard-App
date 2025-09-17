@@ -2,6 +2,10 @@
 
 An interactive flashcard app built with Next.js and React. Hover over cards to reveal answers with a smooth 3D flip animation. The project demonstrates modern React component design, CSS module styling, and clean state/prop management for an engaging user experience. Easily extendable for learning, revision, or portfolio demos.
 
+## Live Demo
+
+click here to get the live demo https://the-flashcard-app.netlify.app/
+
 ## Features
 - Interactive flashcards with hover flip animation
 - Centered question and answer content for clear readability
