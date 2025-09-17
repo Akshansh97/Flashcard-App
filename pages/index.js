@@ -19,20 +19,22 @@ export default function Home() {
       }}
     >
       {/* Header with Theme Toggle */}
-      <header
-        style={{
-          display: "flex",
-          justifyContent: "flex-end",
-          padding: "10px 20px",
-        }}
-      >
-        <ThemeToggle />
-      </header>
+      <header></header>
 
       {/* Main Content */}
       <main style={{ textAlign: "center", marginTop: "20px", flex: 1 }}>
-        <h1>Flashcard Generator</h1>
-        <p>Hover over a card to see the answer!</p>
+        <h1
+         
+        >
+          Flashcard Generator
+         
+        </h1>{" "}
+        <p  style={{
+            display: "flex",
+            justifyContent: "center",
+            padding: "10px 20px",
+          }}> <ThemeToggle /></p>
+        <p>Toggle to change the theme to light or dark!</p>
         <FlashcardList cards={flashcards} />
       </main>
     </div>

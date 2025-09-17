@@ -21,17 +21,18 @@ export default function ThemeToggle() {
     <button
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")} // Toggle theme
       style={{
-        padding: "8px 12px",
+        padding: "12px",
         borderRadius: "8px",
         cursor: "pointer",
         background: theme === "dark" ? "#333" : "#948e8eff",
         color: theme === "dark" ? "#fff" : "#000",
         border: "none",
-        margin: "10px",
+        height: "3rem",
+        marginTop: "5px",
         transition: "all 0.3s ease", // Smooth transition when theme changes
       }}
     >
-      {theme === "dark" ? "☀️ Light Mode" : "🌙 Dark Mode"}
+      {theme === "dark" ? "☀️" : "🌙"}
     </button>
   );
 }
