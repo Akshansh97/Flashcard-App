@@ -34,7 +34,6 @@ export default function Home() {
             justifyContent: "center",
             padding: "10px 20px",
           }}> <ThemeToggle /></p>
-        <p>Toggle to change the theme to light or dark!</p>
         <FlashcardList cards={flashcards} />
       </main>
     </div>
