@@ -32,7 +32,7 @@ export default function ThemeToggle() {
         transition: "all 0.3s ease", // Smooth transition when theme changes
       }}
     >
-      {theme === "dark" ? "☀️" : "🌙"}
+      {theme === "dark" ? "🌙 Toggle to apply light mode" : "☀️ Toggle to apply dark mode"}
     </button>
   );
 }
