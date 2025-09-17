@@ -22,7 +22,7 @@ export default function Home() {
       <header
         style={{
           display: "flex",
-          justifyContent: "flex-start",
+          justifyContent: "flex-end",
           padding: "10px 20px",
         }}
       >
